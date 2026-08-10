@@ -7,18 +7,18 @@ class Solution {
             int left = i + 1; 
             int right = nums.length - 1;
         while(left < right){
-            int current_sum = nums[i] + nums[left] + nums[right];
-            if (Math.abs(current_sum - target) < Math.abs(close - target)) {
-                    close = current_sum;
+            int current = nums[i] + nums[left] + nums[right];
+            if (Math.abs(current - target) < Math.abs(close - target)) {
+                    close = current;
             }
-            if (current_sum < target) {
+            if (current < target) {
                 left++;
                 } 
-                else if (current_sum > target) {
+                else if (current > target) {
                 right--;
                 } 
                 else {
-                    return current_sum;
+                    return current;
                 }
         }
         }
